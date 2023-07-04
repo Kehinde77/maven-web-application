@@ -1,0 +1,74 @@
+pipeline{
+agent any
+tools{
+maven "maven3.9.3" }
+//options{}
+//triggers{}
+stages{
+stage('1clone'){
+steps {
+sh "echo ready to automate build"
+git "https://github.com/Kehinde77/maven-web-application"
+sh "echo latest version collected"}
+}
+
+
+stage('2build'){
+    steps{
+     sh "echo build process starts "
+        sh "mvn clean package"
+        sh "echo build process ends"   
+    }
+}
+
+stage('3review'){ 
+steps{
+        sh "echo CodeQuality review  starts "
+        sh "mvn sonar:sonar"
+        sh "echo CodeQuality review ends"
+      }
+    
+}
+
+stage('4uploadArtifacts'){
+    steps{
+        sh "mvn deploy"
+        sh "echo build and release job completed successfully"
+      }     
+}
+
+stage('5deployment'){
+    steps{
+        deploy adapters: [tomcat9(credentialsId: 'tomcat-passwd', path: '', url: 'http://44.203.95.107:8177/')], contextPath: null, war: 'target/*war'
+        sh "echo deployment to production completed successfully"
+      }       
+}
+}
+
+post{
+failure{
+emailext body: '''Howdy,
+
+Build failed
+
+Kenny Group10
+''', recipientProviders: [developers(), contributor()], subject: 'build progress', to: 'developers'}
+
+success{
+emailext body: '''Howdy,
+
+Build succeeded
+
+Kenny Group10
+''', recipientProviders: [developers(), contributor()], subject: 'build progress', to: 'developers'}
+
+always{
+emailext body: '''Howdy,
+
+Build status
+
+Kenny Group10
+''', recipientProviders: [developers(), contributor()], subject: 'build progress', to: 'developers'}
+}
+
+}
