@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla_jenkinsfile-web-app</finalName>
+		<finalName>tesla_stage_mpbb-web-app</finalName>
 		
 		<plugins>
 			<plugin>
