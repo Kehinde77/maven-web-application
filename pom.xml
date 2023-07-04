@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla_holiday-web-app</finalName>
+		<finalName>tesla_jenkinsfile-web-app</finalName>
 		
 		<plugins>
 			<plugin>
