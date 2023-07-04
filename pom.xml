@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>tesla2-web-app</finalName>
+		<finalName>teslakenny-web-app</finalName>
 		
 		<plugins>
 			<plugin>
