@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://3.83.117.225:8182/kehinde/repository/tesla-releases/</url>
+	      <url>http://54.237.223.99:8182/kehinde/repository/tesla-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.83.117.225:8182/kehinde/repository/tesla-snapshots/</url>
+	      <url>http://54.237.223.99:8182/kehinde/repository/tesla-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
