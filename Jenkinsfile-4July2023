@@ -4,7 +4,7 @@ stage('1.clone'){
   git "https://github.com/Kehinde77/maven-web-application" }
 stage('2.build'){
 sh "${kennyHome}/bin/mvn clean package" }
-/*stage('3.codeQuality'){
+stage('3.codeQuality'){
 sh "${kennyHome}/bin/mvn sonar:sonar" }
 stage('4.uploadArtifacts'){
 sh "${kennyHome}/bin/mvn deploy" }
@@ -18,5 +18,5 @@ Build status
 
 Kenny Group10
 ''', recipientProviders: [developers(), contributor()], subject: 'build progress', to: 'developers'
-}*/
+}
 }
