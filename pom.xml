@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>teslakenny-web-app</finalName>
+		<finalName>tesla_holiday-web-app</finalName>
 		
 		<plugins>
 			<plugin>
