@@ -1,0 +1,22 @@
+node{
+def kennyHome = tool name: 'maven3.9.3'
+stage('1.clone'){
+  git "https://github.com/Kehinde77/maven-web-application" }
+stage('2.build'){
+sh "${kennyHome}/bin/mvn clean package" }
+/*stage('3.codeQuality'){
+sh "${kennyHome}/bin/mvn sonar:sonar" }
+stage('4.uploadArtifacts'){
+sh "${kennyHome}/bin/mvn deploy" }
+stage('5.Deploy_to_Tomcatupload'){
+deploy adapters: [tomcat9(credentialsId: 'tomcat-passwd', path: '', url: 'http://44.203.95.107:8177/')], contextPath: null, war: 'target/*war' }
+
+stage('6.notification'){
+    emailext body: '''Howdy,
+
+Build status
+
+Kenny Group10
+''', recipientProviders: [developers(), contributor()], subject: 'build progress', to: 'developers'
+}*/
+}
